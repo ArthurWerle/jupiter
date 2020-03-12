@@ -6,8 +6,8 @@ const sourcemaps = require('gulp-sourcemaps')
 const source = require('vinyl-source-stream');
 const autoprefixer = require('gulp-autoprefixer')
 
-gulp.task( 'workflow', () => 
-    gulp
+gulp.task( 'workflow', () => {
+    return gulp
         .src(['./src/sass/**/*.scss'], { base: 'src' } )
         .pipe( sourcemaps.init() )
         .pipe( sass().on('error', sass.logError) )
@@ -19,8 +19,8 @@ gulp.task( 'workflow', () =>
         .pipe( sourcemaps.write('./') )
         .pipe( source('build.css') )
         .pipe( gulp.dest('./dist/css/') )
-)
+})
 
-gulp.task( 'default', () => 
-    gulp.watch( './src/sass/**/*.scss', gulp.series('workflow') )
-)
+gulp.task( 'default', () => {
+    return gulp.watch( './src/sass/**/*.scss', gulp.series('workflow') )
+})
