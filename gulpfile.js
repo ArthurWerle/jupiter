@@ -5,13 +5,11 @@ const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const sass = require('gulp-sass')
 const cssnano = require('gulp-cssnano')
-const sourcemaps = require('gulp-sourcemaps')
-const source = require('vinyl-source-stream');
 const autoprefixer = require('gulp-autoprefixer')
 
 const css = {
-  source: 'src/css',
-  target: 'dist/css'
+  source: './src/sass/**/*.scss',
+  target: './dist/sass/'
 }
 
 const js = {
@@ -21,18 +19,14 @@ const js = {
 
 gulp.task('css', () => {
     return gulp
-      .src([
-          css.source + '/*.css'
-      ])
-      .pipe( sourcemaps.init() )
-      .pipe( sass().on('error', sass.logError) )
-      .pipe( autoprefixer({
-        grid: 'autoplace'
-      }))
-      .pipe( cssnano() )
-      .pipe( sourcemaps.write('./') )
-      .pipe( concat('jupiter.min.css') )
-      .pipe( gulp.dest(css.target) )
+        .src(css.source)
+        .pipe(sass().on('error', sass.logError))
+        .pipe( autoprefixer({
+            grid: 'autoplace'
+        }))
+        .pipe( cssnano() )
+        .pipe( concat('jupiter.min.css') )
+        .pipe( gulp.dest(css.target) )
 })
 
 gulp.task('js', () => {
