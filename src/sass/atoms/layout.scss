@@ -24,3 +24,7 @@
         padding: 10px;
     }
 }
+
+.ju-button {
+    @extend %reset-button;
+}
