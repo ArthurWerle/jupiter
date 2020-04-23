@@ -8,15 +8,15 @@ const cssnano = require('gulp-cssnano')
 const autoprefixer = require('gulp-autoprefixer')
 
 const css = {
-  source: './src/sass/**/*.scss',
-  target: './dist/sass/'
+    source: './src/sass/**/*.scss',
+    target: './dist/sass/'
 }
 
 const js = {
-  source: 'src/js',
-  target: 'dist/js'
+    source: 'src/js',
+    target: 'dist/js'
 }
-
+  
 gulp.task('css', () => {
     return gulp
         .src(css.source)
@@ -30,18 +30,18 @@ gulp.task('css', () => {
 })
 
 gulp.task('js', () => {
-  return gulp
-    .src([
-      js.source + '/*.js'
-    ])
-    .pipe( uglify({mangle:true} ).on( 'error', gutil.log ))
-    .pipe( concat('jupiter.min.js') )
-    .pipe( gulp.dest(js.target) )
+    return gulp
+        .src([
+          js.source + '/*.js'
+        ])
+        .pipe( uglify({mangle:true} ).on( 'error', gutil.log ))
+        .pipe( concat('jupiter.min.js') )
+        .pipe( gulp.dest(js.target) )
 })
 
 gulp.task('default', gulp.series(['css', 'js']))
 
 gulp.task('watch', () => {
-  gulp.watch( css.source + '/*.css', ['css'] )
-  gulp.watch( js.source + '/*.js', ['js'] )
+    gulp.watch( css.source + '/*.css', gulp.series('css') )
+    gulp.watch( js.source + '/*.js', gulp.series('js') )
 })
