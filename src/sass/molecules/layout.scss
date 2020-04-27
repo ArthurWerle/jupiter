@@ -1,0 +1,15 @@
+.ju-toolbar {
+    display: flex;
+
+    .ju-box:first-child {
+        padding-left: 0px;
+    }
+
+    .ju-box:last-child {
+        padding-right: 0px;
+    }
+
+    &--spaced {
+        justify-content: space-between;
+    }
+}

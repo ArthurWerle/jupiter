@@ -8,7 +8,7 @@ const cssnano = require('gulp-cssnano')
 const autoprefixer = require('gulp-autoprefixer')
 
 const css = {
-    source: './src/sass/**/*.scss',
+    source: './src/sass/main.scss',
     target: './dist/sass/'
 }
 

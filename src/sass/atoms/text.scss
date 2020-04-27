@@ -1,0 +1,16 @@
+.ju-label {
+    color: $SECONDARY_COLOR;
+
+    &--inverted {
+        color: $PRIMARY_COLOR;
+    }
+
+    &--detailed {
+        display: flex;
+        justify-content: space-between;
+
+        .label {
+            font-weight: $FONT_BOLD;
+        }
+    }
+}

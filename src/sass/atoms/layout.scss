@@ -33,4 +33,8 @@
     &--compact {
         padding: $SMALL_SPACING;
     }
+
+    &--highlighted {
+        background-color: $HIGHLIGHT_COLOR;
+    }
 }
