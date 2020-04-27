@@ -27,4 +27,10 @@
 
 .ju-button {
     @extend %reset-button;
+    color: $SECONDARY_COLOR;
+    padding: $DEFAULT_SPACING;
+
+    &--compact {
+        padding: $SMALL_SPACING;
+    }
 }
