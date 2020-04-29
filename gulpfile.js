@@ -9,20 +9,18 @@ const autoprefixer = require('gulp-autoprefixer')
 
 const css = {
   source: './src/sass/main.scss',
-  target: './dist/sass/'
+  target: './dist/sass/',
 }
 
 const js = {
   source: 'src/js',
-  target: 'dist/js'
+  target: 'dist/js',
 }
   
 task('css', () => 
   src(css.source)
     .pipe(sass().on('error', sass.logError))
-    .pipe( autoprefixer({
-        grid: 'autoplace'
-    }))
+    .pipe(autoprefixer({ grid: 'autoplace' }))
     .pipe(cssnano())
     .pipe(concat('jupiter.min.css'))
     .pipe(dest(css.target))
