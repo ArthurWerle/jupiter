@@ -1,40 +1,40 @@
 .ju-container {
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    &--spaced {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+  &--spaced {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
-    &--compact {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+  &--compact {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .ju-box {
-    padding: 20px;
+  padding: 20px;
 
-    &--spaced {
-        padding: 30px;
-    }
+  &--spaced {
+    padding: 30px;
+  }
 
-    &--compact {
-        padding: 10px;
-    }
+  &--compact {
+    padding: 10px;
+  }
 }
 
 .ju-button {
-    @extend %reset-button;
-    background-color: $SECONDARY_COLOR;
-    padding: $DEFAULT_SPACING;
+  @extend %reset-button;
+  background-color: $SECONDARY_COLOR;
+  padding: $DEFAULT_SPACING;
 
-    &--compact {
-        padding: $SMALL_SPACING;
-    }
+  &--compact {
+    padding: $SMALL_SPACING;
+  }
 
-    &--highlighted {
-        background-color: $HIGHLIGHT_COLOR;
-    }
+  &--highlighted {
+    background-color: $HIGHLIGHT_COLOR;
+  }
 }
