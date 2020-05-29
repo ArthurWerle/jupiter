@@ -11,11 +11,6 @@ const css = {
   source: './src/sass/main.scss',
   target: './dist/sass/',
 }
-
-const js = {
-  source: 'src/js',
-  target: 'dist/js',
-}
   
 task('css', () => 
   src(css.source)
@@ -26,16 +21,8 @@ task('css', () =>
     .pipe(dest(css.target))
 )
 
-task('js', () => 
-  src([ js.source + '/*.js' ])
-    .pipe(uglify({ mangle:true } ).on('error', log))
-    .pipe(concat('jupiter.min.js'))
-    .pipe(dest(js.target))
-)
-
-task('default', series(['css', 'js']))
+task('default', series(['css']))
 
 task('watch', () => {
   watch(css.source + '/*.css', series('css'))
-  watch(js.source + '/*.js', series('js'))
 })
