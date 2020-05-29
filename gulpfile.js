@@ -1,8 +1,6 @@
 'use strict';
 const { task, src, dest, series, watch } = require('gulp')
-const { log } = require('gulp-util')
 const concat = require('gulp-concat')
-const uglify = require('gulp-uglify')
 const sass = require('gulp-sass')
 const cssnano = require('gulp-cssnano')
 const autoprefixer = require('gulp-autoprefixer')
